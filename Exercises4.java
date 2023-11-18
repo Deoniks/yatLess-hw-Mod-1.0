@@ -5,7 +5,7 @@ public class Exercises4
     static Scanner scan = new Scanner(System.in);
     public static void main(String[] args)
     {
-        Exs4();
+        Exs8();
     }
     /*
         Дан номер месяца — целое число в диапазоне 1–12
@@ -183,7 +183,25 @@ public class Exercises4
 
     Дан номер единицы длины (целое число в диапазоне 1–5) и длина отрезка в этих единицах (вещественное число).
      Найти длину отрезка в метрах. */
-    private static void Exs5(){}
+    private static void Exs5()
+    {
+        System.out.println("Введите число- номер тип единицы(1-Дециметр,2-Километр,3-метр,4-миллиметр,5-сантиметр");
+        int type = scan.nextInt();
+        if (type > 0 && type < 6)
+        {
+            System.out.println("Введите длину отрезка");
+            double d = scan.nextDouble();
+            switch (type)
+            {
+                case 1 -> System.out.println((d * 0.1) + " метров");
+                case 2 -> System.out.println((d * 1000) + " метров");
+                case 3 -> System.out.println((d * 1) + " метров");
+                case 4 -> System.out.println((d * 0.001) + " метров");
+                case 5 -> System.out.println((d * 0.01) + " метров");
+                default -> System.out.println("Нет такой единицы измерений");
+            }
+        }
+    }
 
     /*### **Exercise 6:**
 
@@ -201,7 +219,25 @@ public class Exercises4
 
     Дан номер единицы массы (целое число в диапазоне 1–5) и масса тела в этих единицах
     (вещественное число). Найти массу тела в килограммах.*/
-    private static void Exs6(){}
+    private static void Exs6()
+    {
+        System.out.println("Введите число- номер тип массы(1-килограмм,2-миллиграмм,3-грамм,4-тонна,5-центнер");
+        int type = scan.nextInt();
+        if (type > 0 && type < 6)
+        {
+            System.out.println("Введите массу тела");
+            double d = scan.nextDouble();
+            switch (type)
+            {
+                case 1 -> System.out.println((d * 1) + " килограммов");
+                case 2 -> System.out.println((d * 0.000001) + " килограммов");
+                case 3 -> System.out.println((d * 0.001) + " килограммов");
+                case 4 -> System.out.println((d * 1000) + " килограммов");
+                case 5 -> System.out.println((d * 100) + " килограммов");
+                default -> System.out.println("Нет такой единицы массы");
+            }
+        }
+    }
 
     /*### **Exercise 7:**
 
@@ -216,8 +252,18 @@ public class Exercises4
     4 — площадь круга S = π·R2.
 
     Дан номер одного из этих элементов и его значение.
-     Вывести значения остальных элементов данной окружности (в том же порядке). В качестве значения π использовать 3.14.*/
-    private static void Exs7(){}
+     Вывести значения остальных элементов данной окружности (в том же порядке).
+      В качестве значения π использовать 3.14.*/
+    private static void Exs7()
+    {
+        final double p = 3.14;
+        System.out.println("Введите значение радиуса");
+        double r = scan.nextDouble();
+        double d = 2*r;
+        double l = 2*p*r;
+        double s = p*r*2;
+        System.out.println("Вывод D: "+d+" L: "+l+" S: " + s);
+    }
 
     /*### **Exercise 8:**
 
@@ -233,5 +279,13 @@ public class Exercises4
     Дан номер одного из этих элементов и его значение.
      Вывести значения остальных элементов данного треугольника (в том же порядке)
             * */
-    private static void Exs8(){}
+    private static void Exs8()
+    {
+        System.out.println("Введите значение катета");
+        double catet = scan.nextDouble();
+        double gipote = catet*Math.sqrt(2);
+        double h = gipote / 2;
+        double s = gipote*h/2;
+        System.out.println("Вывод- гипетенуза: "+gipote+" высота: "+h+" площадь: " + s);
+    }
 }
