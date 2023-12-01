@@ -66,9 +66,9 @@ public class ProjectCinema
         int i = scan.nextInt();
         switch (i)
         {
-            case(1): printCinemaHall(sizeHall); mainMenu();
-            case (2): buyTicket(); mainMenu();
-            case (3): statistics();
+            case(1): printCinemaHall(sizeHall); mainMenu();break;
+            case (2): buyTicket(); mainMenu();break;
+            case (3): statistics();break;
             case (0): break;
         }
     }
