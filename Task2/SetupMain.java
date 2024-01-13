@@ -10,6 +10,7 @@ public class SetupMain {
         //time();
         //ball();
         ApartAndColony();
+        //MagickSchool();
     }
     public static void date(){
         Date d1 = new Date(2,11,2012);
@@ -75,17 +76,55 @@ public class SetupMain {
             }
         }
     }
-
     public static void ApartAndColony(){
         Apartmen apar = new Apartmen("MarsLite",30,"Nanolite");
         Colony colony = new Colony("Mikey",3500,5,apar);
-        System.out.println(colony);
+        System.out.println(colony.price(apar.getSmet()));
 
         Apartmen ap = new Apartmen();
         Colony co = new Colony();
         ap.setSmet(35);
+        ap.setType("Carbonpanel");
         co.setSmetPrice(13500);
+        co.setApart(ap);
         System.out.println(co.price(ap.getSmet()));
 
     }
+    public static void MagickSchool(){
+
+        Esper [] esp = new Esper[12];
+        esp[0] = new Esper("Eliot",12,"Crio");
+        esp[1] = new Esper("Smash",9998,"Piro");
+        esp[2] = new Esper("Saitama",10000,"Gidro");
+        esp[3] = new Esper("Potter",500,"Piro");
+        esp[4] = new Esper("Grotter",500,"Crio");
+        esp[5] = new Esper("Deus",1120,"FourElem");
+        esp[6] = new Esper("Mouse",2,"FourElem");
+        esp[7] = new Esper("Leo",5,"Piro");
+        esp[8] = new Esper("Main",21,"Geo");
+        esp[9] = new Esper("Will",158,"Geo");
+        esp[10] = new Esper("Brook",580,"Girdro");
+        esp[11] = new Esper("Brut",38,"Crio");
+
+        School schPiro  = new School("Tibidoh","Piro",esp);
+        School schCrio = new School("Umbrella","Crio",esp);
+        School schGidro = new School("Sharmbaton","Gidro",esp);
+        School schGeo = new School("AcademYou","Geo",esp);
+        School schFourEl = new School("Hogwarts","FourElem",esp);
+
+        schPiro.checkType();
+        schCrio.checkType();
+        schGidro.checkType();
+        schGeo.checkType();
+        schFourEl.checkType();
+
+        System.out.println(schPiro.print());
+        System.out.println(schCrio.print());
+        System.out.println(schGidro.print());
+        System.out.println(schGeo.print());
+        System.out.println(schFourEl.print());
+
+
+    }
+
 }

@@ -6,14 +6,15 @@ public class Colony {
     private String name;
     private int smetPrice;
     private int apCount;
-    Apartmen[] apart = new Apartmen[3];
+    Apartmen[] apart;
 
     public Colony(){}
-    public Colony(String name,int smetPrice,int apCount, Apartmen ap){
+    public Colony(String name,int smetPrice,int apCount, Apartmen apart){
         this.name = name;
         this.smetPrice = smetPrice;
         this.apCount = apCount;
-        this.apart[0] = ap;
+        this.apart = new Apartmen[1];
+        this.apart[0] = apart;
     }
 
     public String getName(){return this.name;}
@@ -26,10 +27,22 @@ public class Colony {
     }
     public int getApCount(){return this.apCount;}
     public void setApCount(int apCount){this.apCount = apCount;}
+    public void setApart(Apartmen apart){
+        this.apart = new Apartmen[1];
+        this.apart[0] = apart;
+    }
+    public Apartmen getApartmen(Apartmen apartmen){
+        return this.apart[0];
+    }
 
-    public int price(int getSmet){
+    public String price(int getSmet){
         int p = getSmet * smetPrice;
-        return p;
+        if(apart[0].getType().equalsIgnoreCase("Carbonpanel")){
+            return "carbon " +(int) (p*0.8);
+        } else if (apart[0].getType().equalsIgnoreCase("Cyberbrick")) {
+            return "cyber " +(int) (p*1.5);
+        }
+        return "nano "+p;
     }
 
 
