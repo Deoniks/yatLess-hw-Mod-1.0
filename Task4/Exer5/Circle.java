@@ -16,7 +16,7 @@ public class Circle extends Shape{
     public void setRadius(double radius){this.radius = radius;}
     public double getArea(){
         double s = Math.PI * Math.pow(radius,2); //S- area circle
-        String area = String.format("%.2f",s);
+        String area = String.format("%.2f",s); // create String var to format doible num
         String a = area.replace(',','.');
         double sA = Double.valueOf(a);
         return sA;
