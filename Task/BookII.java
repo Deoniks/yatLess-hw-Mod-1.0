@@ -42,7 +42,7 @@ public class BookII {
     public int sellProcent(String type, int price){
         countSell++;
         int p = price;
-        char t = type.charAt(0);
+        char t = type.charAt(0); //Var t for comparision first simbol get word(work if there is selection from enum)
         if(t=='c'&& countSell<50){
             double res = p*0.2;
             p = p-(int)res;
