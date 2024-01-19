@@ -9,12 +9,11 @@ public class Colony {
     Apartmen[] apart;
 
     public Colony(){}
-    public Colony(String name,int smetPrice,int apCount, Apartmen apart){
+    public Colony(String name,int smetPrice,int apCount, Apartmen[] apart){
         this.name = name;
         this.smetPrice = smetPrice;
         this.apCount = apCount;
-        this.apart = new Apartmen[1];
-        this.apart[0] = apart;
+        this.apart = apart;
     }
 
     public String getName(){return this.name;}
@@ -27,9 +26,8 @@ public class Colony {
     }
     public int getApCount(){return this.apCount;}
     public void setApCount(int apCount){this.apCount = apCount;}
-    public void setApart(Apartmen apart){
-        this.apart = new Apartmen[1];
-        this.apart[0] = apart;
+    public void setApart(Apartmen [] apart){
+        this.apart = apart;
     }
     public Apartmen getApartmen(Apartmen apartmen){
         return this.apart[0];

@@ -77,16 +77,24 @@ public class SetupMain {
         }
     }
     public static void ApartAndColony(){
-        Apartmen apar = new Apartmen("MarsLite",30,"Nanolite");
+        Apartmen[] apar = new Apartmen[3];
+        apar[0] = new Apartmen("Grido",12,"Nano");
+        apar[1] = new Apartmen("Fido",5,"Brick");
+        apar[2] = new Apartmen("Leadom",15,"Carbon");
         Colony colony = new Colony("Mikey",3500,5,apar);
-        System.out.println(colony.price(apar.getSmet()));
+        System.out.println(colony.price(apar[1].getSmet()));
 
+        Apartmen[] aparts = new Apartmen[3];
+        aparts[0] = new Apartmen("Marso",10,"Nano");
+        aparts[1] = new Apartmen("Larso",15,"Brick");
+        aparts[2] = new Apartmen("Garso",25,"Carbon");
         Apartmen ap = new Apartmen();
         Colony co = new Colony();
         ap.setSmet(35);
         ap.setType("Carbonpanel");
         co.setSmetPrice(13500);
-        co.setApart(ap);
+        co.setApart(aparts);
+        System.out.println(co.getApartmen(aparts[0]));
         System.out.println(co.price(ap.getSmet()));
 
     }
